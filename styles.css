@@ -1,0 +1,128 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header Styles with Flexbox */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 1rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #007bff;
+}
+
+/* Main Content with CSS Grid */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.content-text {
+    padding: 1rem;
+}
+
+.content-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.content-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Footer Styles */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 1rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a {
+    color: white;
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+/* Media Queries for Responsiveness */
+/* Small Screens */
+@media screen and (max-width: 600px) {
+    .header, .main-content, .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav {
+        margin-top: 1rem;
+        flex-direction: column;
+    }
+
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .social-links {
+        margin-top: 1rem;
+    }
+}
+
+/* Medium Screens */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .header, .footer {
+        flex-direction: row;
+    }
+}
+
+/* Bonus: Screen Resize Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media screen and (min-width: 1025px) {
+    .main-content {
+        animation: fadeIn 0.5s ease-in;
+    }
+}
